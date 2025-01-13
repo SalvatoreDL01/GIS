@@ -101,11 +101,8 @@ def index():
             .container {{
                 width: 100%;
             }}
-            #map-container-o3 {{
+            #map-container-no2,#map-container-o3, #map-container-pm10, #map-container-pm25 {{
                 display: flex;
-            }}
-            #map-container-no2, #map-container-pm10, #map-container-pm25 {{
-                display: none;
             }}
         </style>
     </head>
@@ -121,23 +118,23 @@ def index():
         <br>
         <div id="map-container">
             <div class="container" id="map-container-no2">
-                <div class="map">{map_left_NO2_html}</div>
-                <div class="map">{map_right_NO2_html}</div>
+                <div class="map" id="map-left1">{map_left_NO2_html}</div>
+                <div class="map" id="map-right1">{map_right_NO2_html}</div>
             </div>
 
             <div class="container" id="map-container-o3">
-                <div class="map">{map_left_O3_html}</div>
-                <div class="map">{map_right_O3_html}</div>
+                <div class="map" id="map-left2">{map_left_O3_html}</div>
+                <div class="map" id="map-right2">{map_right_O3_html}</div>
             </div>
 
             <div class="container" id="map-container-pm10">
-                <div class="map">{map_left_PM10_html}</div>
-                <div class="map">{map_right_PM10_html}</div>
+                <div class="map" id="map-left3">{map_left_PM10_html}</div>
+                <div class="map" id="map-right3">{map_right_PM10_html}</div>
             </div>
 
             <div class="container" id="map-container-pm25">
-                <div class="map">{map_left_PM25_html}</div>
-                <div class="map">{map_right_PM25_html}</div>
+                <div class="map" id="map-left4">{map_left_PM25_html}</div>
+                <div class="map" id="map-right4">{map_right_PM25_html}</div>
             </div>
             
         </div>
@@ -155,6 +152,22 @@ def index():
 
             // Mostra il contenitore corrispondente al valore selezionato
             document.getElementById(selectedValue).style.display = "flex";
+        }}
+
+        // Sincronizzazione zoom e panoramica tra le mappe
+        function syncMaps(map1, map2) {{
+            map1.on('moveend', function() {{
+                var center = map1.getCenter();
+                var zoom = map1.getZoom();
+                map2.setView(center, zoom);
+            }});
+        }}
+    
+        window.onload = function() {{
+            // Nascondi l'elemento dopo che la pagina è stata caricata
+            document.getElementById("map-container-o3").style.display = "none";
+            document.getElementById("map-container-pm10").style.display = "none";
+            document.getElementById("map-container-pm25").style.display = "none";
         }}
     </script>
     </body>
