@@ -48,19 +48,19 @@ class mappaggio:
         ).add_to(dual_map.m2)
 
     @staticmethod
-    def add_shp_to_map(path,map):
-
-        fg = folium.FeatureGroup(name="Puglia", control = False).add_to(map)
+    def add_shp_to_map(path, map):
+        fg = folium.FeatureGroup(name="Puglia", control=False).add_to(map)
 
         province = geopandas.read_file(path)
         layer_province = folium.GeoJson(
-        province,
-        style_function=lambda feature: {
-            "color": "#00BFFF",  # Colore iniziale del bordo
-            "fillColor": "#00BFFF",  # Colore iniziale di riempimento
-            "weight": 1,
-            "fillOpacity": 0.2,
-        }
+            province,
+            style_function=lambda feature: {
+                "color": "#00BFFF",  # Colore iniziale del bordo
+                "fillColor": "#00BFFF",  # Colore iniziale di riempimento
+                "weight": 1,
+                "fillOpacity": 0.2,
+            }
         ).add_to(fg)
 
-        map.fit_bounds(layer_province.get_bounds())
+        # Commentata per sistemare il problema dello zoom
+        # map.fit_bounds(layer_province.get_bounds())
