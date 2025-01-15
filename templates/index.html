@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analisi gas in Puglia e Lombardia</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Analisi Gas in Puglia e Lombardia</h1>
+    <div id="controls">
+        <label for="gas-map">Seleziona il gas da analizzare:</label>
+        <select id="gas-map" onchange="switchMap()">
+            <option value="map-container-no2">NO2</option>
+            <option value="map-container-o3">O3</option>
+            <option value="map-container-pm10">PM10</option>
+            <option value="map-container-pm25">PM2.5</option>
+        </select>
+    </div>
+    <div id="map-container">
+        <div class="container visible" id="map-container-no2">
+            <div class="map-group">
+                <div class="map">{{ map_left1 | safe }}</div>
+                <div class="map">{{ map_right1 | safe }}</div>
+            </div>
+        </div>
+        <div class="container" id="map-container-o3">
+            <div class="map-group">
+                <div class="map">{{ map_left2 | safe }}</div>
+                <div class="map">{{ map_right2 | safe }}</div>
+            </div>
+        </div>
+        <div class="container" id="map-container-pm10">
+            <div class="map-group">
+                <div class="map">{{ map_left3 | safe }}</div>
+                <div class="map">{{ map_right3 | safe }}</div>
+            </div>
+        </div>
+        <div class="container" id="map-container-pm25">
+            <div class="map-group">
+                <div class="map">{{ map_left4 | safe }}</div>
+                <div class="map">{{ map_right4 | safe }}</div>
+            </div>
+        </div>
+    </div>
+
+    <!-------------- pop-up -------------->
+    <br><br>
+    <h2>Grafici delle analisi effettuate:</h2>
+    <div id="buttons-container">
+        <button onclick="showPopup('sup_limiti_per_gas')">Superamento dei limiti inquinanti per provincia e gas</button>
+        <button onclick="showPopup('sup_limiti_generale')">Superamento dei limiti inquinanti per provincia</button>
+        <button onclick="showPopup('corr_meteo_gas')">Correlazione tra variabili meteo e inquinanti</button>
+        <button onclick="showPopup('eventi_estremi')">Confronto tra eventi estremi e non</button>
+    </div>
+
+    <div id="buttons-container">
+        <button onclick="showPopup('media_gas')">Media valori per tipologia di inquinante</button>
+
+        <!-- Pop-up dinamici -->
+        <button onclick="showSelectionPopup('distanza')">Relazione tra distanza centralina meteo e livelli inquinanti</button>
+        <button onclick="showSelectionPopup('collage')">Correlazioni Gas-Meteo e Qualità dell'Aria</button>
+        <button onclick="showSelectionPopup('analisi-meteo-gas')">Relazione tra variabili meteo e inquinanti</button>
+    </div>
+
+    <div id="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <div class="popup-left">
+                <img id="popup-img-left" src="" alt="Analisi Puglia">
+                <p id="popup-caption-left"></p>
+            </div>
+            <div class="popup-right">
+                <img id="popup-img-right" src="" alt="Analisi Lombardia">
+                <p id="popup-caption-right"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-------------- image pop-up -------------->
+    <div id="image-popup">
+        <span class="close-btn" onclick="closeImagePopup()">&times;</span>
+        <img id="large-image" src="" alt="Immagine ingrandita">
+    </div>
+
+    <!-------------- selection pop-up -------------->
+    <div id="selection-popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closeSelectionPopup()">&times;</span>
+            <div id="selection-container">
+                <!-- Qui verranno generate dinamicamente le opzioni -->
+            </div>
+            <button id="selection-confirm-btn" onclick="confirmSelection()">Conferma</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
