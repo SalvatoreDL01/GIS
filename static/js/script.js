@@ -55,7 +55,8 @@ function showPopup(analysis) {
             right: "static/images/lombardia/tempo/NDVI_medio_lombardia.png",
             leftCaption: " L'NDVI della puglia è più alto nei mesi autunnali e invernali rispetto a quelli primaverili" +
                 " ed estivi. Questo fenomeno probabilmente legato alla natura generalmente secca del territorio.",
-            rightCaption: ""
+            rightCaption: "L'andamento dell'NDVI lombardo mostra come la vegetazione aumenti durante i mesi primaverili" +
+                " e diminuisca in quelli autunnali come ci si aspetta."
         }
     };
 
@@ -230,14 +231,17 @@ function showPopupWithImages(gas, meteo) {
                         ' Questo livello di correlazione non è sufficiente per rappresentare una vera e propria' +
                         ' correlazione tra  i due elementi. In generale si può dire che la temperatura è collegabile' +
                         ' all\'andamento stagionale del NO2 legato all\'inquinamento degli impianti di riscaldamento.',
-                    rightCaption: ''
+                    rightCaption: 'Il coefficiente di Pearson dimostra una discreta correlazione negativa con la' +
+                        ' temperatura (-0.538). Cosa che coincide con la maggiore produzione di NO2 legata ai ' +
+                        'riscaldamenti e alla minore attività delle linee dei trasporti pubblici nei mesi estivi.'
                 },
                 precipitazione: {
                     left: "static/images/puglia/rel meteo gas/NO2_precipitazione.png",
                     right: "static/images/lombardia/rel meteo gas/NO2_precipitazione.png",
                     leftCaption: 'Non vi sono evidenti correlazioni con il verificarsi di precipitazioni e la' +
                         ' concentrazione del NO2nonostante questo gas sia collegabile al fenomeno delle piogge acide.',
-                    rightCaption: ''
+                    rightCaption: 'Esiste una lieve correlazione con le precipitazioni in Lombardia (-0.111). ' +
+                        'Non esistono sostanziali differenze rispetto a quello detto per la Puglia.'
                 },
                 vvento: {
                     left: "static/images/puglia/rel meteo gas/NO2_vvento.png",
@@ -245,7 +249,9 @@ function showPopupWithImages(gas, meteo) {
                     leftCaption: 'Non esiste un\'evidente correlazione tra la velocità del vento e la concentrazione di' +
                         ' NO2 (circa 0,002). Questo può essere dovuto alla carenza di una grossa variabilità di' +
                         ' velocità del vento e concentrazione di NO2 misurata ma anche alla relativa pesantezza del NO2.',
-                    rightCaption: ''
+                    rightCaption: 'Anche in questo caso non esiste una forte correlazione negativa tra NO2 e velocità' +
+                        ' del vento (-0.076). In Lombardia la correlazione è più forte di quella pugliese ma è comunque' +
+                        ' troppo vicina allo 0 suggerendo l\'assenza di correlazione.'
                 }
             },
             O3: {
@@ -348,7 +354,10 @@ function showPopupWithImages(gas, meteo) {
                     ' e non agli andamenti stagionali della vegetazione. Questo perché, come mostrato dai grafi di' +
                     ' andamento mensile dell\'NDVI, questo è più alto nei mesi autunnali e invernali rispetto a' +
                     ' quelli primaverili e estivi.',
-                rightCaption: ''
+                rightCaption: 'Esiste una consistente correlazione negativa tra NO2 e NDVI in Lombardia (-0.515).' +
+                    ' Questo valore è probabilmente dovuto alla coincidente stagionalità dell\'attività vegetale come' +
+                    ' è possibile vedere dagli andamenti temporali. Un\'ulteriore spiegazione è associabile alla' +
+                    ' capacità della vegetazione di assorbire azoto durante le fasi di crescita.'
             },
             O3: {
                 left: "static/images/puglia/ndvi/O3_mean.png",
@@ -378,7 +387,11 @@ function showPopupWithImages(gas, meteo) {
                     'e diminuire tra marzo e aprile e rimanendo relativamente basso nei periodo estivo.' +
                     ' Questo fenomeno è legato all\'utilizzo dei riscaldamenti che rappresentano uno dei principali' +
                     ' produttori di NO2 assieme alla combustione degli idrocarburi legata ai mezzi di trasporto.',
-                rightCaption: ''
+                rightCaption: 'L\'NO2 Cresce nel periodo tra settembre e febbraio, dove incomincia a decrescere per' +
+                    ' raggiungere il suo minimo nel mese di agosto. Questo trend è opposto a quello dell\'andamento' +
+                    ' del NDVI che cresce durante i mesi di maggio-lugio per poi incominciare a decrescere tra settembre' +
+                    ' e dicembre. Siccome esiste una  correlazione con la temperatura è probabile che questa correlazione' +
+                    ' sia dovuta alla coincidenza di perdita di vegetazione nei mesi invernali con l\'utilizzo dei riscaldamenti.'
             },
             O3: {
                 left: "static/images/puglia/tempo/O3_puglia.png",
