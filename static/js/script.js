@@ -283,19 +283,19 @@ function showPopupWithImages(gas, meteo) {
             PM25: {
                 temperatura: {
                     left: "static/images/puglia/rel meteo gas/PM2.5_temperatura.png",
-                    right: "static/images/lombardia/rel meteo gas/PM2.5_temperatura.png",
+                    right: "static/images/lombardia/rel meteo gas/PM25_temperatura.png",
                     leftCaption: '',
                     rightCaption: ''
                 },
                 precipitazione: {
                     left: "static/images/puglia/rel meteo gas/PM2.5_precipitazione.png",
-                    right: "static/images/lombardia/rel meteo gas/PM2.5_precipitazione.png",
+                    right: "static/images/lombardia/rel meteo gas/PM25_precipitazione.png",
                     leftCaption: '',
                     rightCaption: ''
                 },
                 vvento: {
                     left: "static/images/puglia/rel meteo gas/PM2.5_vvento.png",
-                    right: "static/images/lombardia/rel meteo gas/PM2.5_vvento.png",
+                    right: "static/images/lombardia/rel meteo gas/PM25_vvento.png",
                     leftCaption: '',
                     rightCaption: ''
                 }
