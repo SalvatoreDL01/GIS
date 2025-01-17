@@ -258,19 +258,24 @@ function showPopupWithImages(gas, meteo) {
                 temperatura: {
                     left: "static/images/puglia/rel meteo gas/O3_temperatura.png",
                     right: "static/images/lombardia/rel meteo gas/O3_temperatura.png",
-                    leftCaption: '',
-                    rightCaption: ''
+                    leftCaption: 'Vi è una discreta correlazione con la temperatura e la concentrazione di O3 (0,4).',
+                    rightCaption: 'Vi è una forte correlazione con la temperatura in Lombardia (0.748). Queste' +
+                        ' correlazioni evidenziano come le alte temperature influenzano la presenza di O3 e come questa' +
+                        ' sia più incisiva in Lombardia in quanto la vegetazione è più attiva nelle stagioni calde al contrario della Puglia.'
                 },
                 precipitazione: {
                     left: "static/images/puglia/rel meteo gas/O3_precipitazione.png",
                     right: "static/images/lombardia/rel meteo gas/O3_precipitazione.png",
-                    leftCaption: '',
-                    rightCaption: ''},
+                    leftCaption: 'Vi è una leggera correlazione negativa con le precipitazioni (-0,14). L\'O3 però non è' +
+                        ' un gas che viene atterrato dalla pioggia per cui è probabile che la correlazione sia' +
+                        ' semplicemente dovuta alla stagionalità delle grosse precipitazioni.',
+                    rightCaption: 'Qui la correlazione è ancora più bassa (-0.019) dimostrando come i due fenomeni non siano direttamente correlati.'},
                 vvento: {
                     left: "static/images/puglia/rel meteo gas/O3_vvento.png",
                     right: "static/images/lombardia/rel meteo gas/O3_vvento.png",
-                    leftCaption: '',
-                    rightCaption: ''
+                    leftCaption: 'Non vi sono correlazioni con la velocità del vento (-0,004).',
+                    rightCaption: 'Anche se il coefficente di Pearson è più alto non vi sono correlazioni' +
+                        ' con la velocità del vento (-0.0999).'
                 }
             },
             PM10: {
@@ -362,8 +367,13 @@ function showPopupWithImages(gas, meteo) {
             O3: {
                 left: "static/images/puglia/ndvi/O3_mean.png",
                 right: "static/images/lombardia/ndvi/O3_mean.png",
-                leftCaption: '',
-                rightCaption: ''
+                leftCaption: 'La lieve correlazione negativa tra la presenza di O3 e il valore medio dell\'NDVI (-0,136)' +
+                    ' è probabilmente dovuto alla naturale inversione dei trend temporali dell\'NDVI in puglia. Siccome' +
+                    ' l\'NDVI non considera il livello di vegetazione acquatico in quanto assorbe l\'infrarosso.',
+                rightCaption: 'È presente una sostanziale correlazione tra NDVI e O3 (0.546). L\'O3 è un gas che si' +
+                    ' forma per ionizzazione dell\'O2,a partire da composti organici volatili (COV)' +
+                    '  e ossidi di azoto (NOx) da parte delle radiazioni ultraviolette. È quindi naturale' +
+                    ' che con l\'aumento della vegetazione e delle temperature vi sia un aumento dell\'O3.'
             },
             PM10: {
                 left: "static/images/puglia/ndvi/PM10_mean.png",
@@ -396,7 +406,10 @@ function showPopupWithImages(gas, meteo) {
             O3: {
                 left: "static/images/puglia/tempo/O3_puglia.png",
                 right: "static/images/lombardia/tempo/O3_lombardia.png",
-                leftCaption: '',
+                leftCaption: 'L\'O3 della Puglia e della Lombardia sono praticamente simili nella loro distribuzione' +
+                    ' temporale. Questo perché nei mesi estivi le zone dell\'emisfero boreale sono' +
+                    ' più soggette ai raggi ultraviolette per cui vi è una maggiore produzione' +
+                    ' di O3. Inoltre nei mesi estivi vi è una maggiore attività vegetale.',
                 rightCaption: ''
             },
             PM10: {
