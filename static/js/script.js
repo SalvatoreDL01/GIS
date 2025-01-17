@@ -53,7 +53,8 @@ function showPopup(analysis) {
         "ndvi_medio": {
             left: "static/images/puglia/tempo/NDVI_medio_puglia.png",
             right: "static/images/lombardia/tempo/NDVI_medio_lombardia.png",
-            leftCaption: "",
+            leftCaption: " L'NDVI della puglia è più alto nei mesi autunnali e invernali rispetto a quelli primaverili" +
+                " ed estivi. Questo fenomeno probabilmente legato alla natura generalmente secca del territorio.",
             rightCaption: ""
         }
     };
@@ -225,19 +226,25 @@ function showPopupWithImages(gas, meteo) {
                 temperatura: {
                     left: "static/images/puglia/rel meteo gas/NO2_temperatura.png",
                     right: "static/images/lombardia/rel meteo gas/NO2_temperatura.png",
-                    leftCaption: '',
+                    leftCaption: 'Esiste una correlazione debole con la temperatura (circa -0,155).' +
+                        ' Questo livello di correlazione non è sufficiente per rappresentare una vera e propria' +
+                        ' correlazione tra  i due elementi. In generale si può dire che la temperatura è collegabile' +
+                        ' all\'andamento stagionale del NO2 legato all\'inquinamento degli impianti di riscaldamento.',
                     rightCaption: ''
                 },
                 precipitazione: {
                     left: "static/images/puglia/rel meteo gas/NO2_precipitazione.png",
                     right: "static/images/lombardia/rel meteo gas/NO2_precipitazione.png",
-                    leftCaption: '',
+                    leftCaption: 'Non vi sono evidenti correlazioni con il verificarsi di precipitazioni e la' +
+                        ' concentrazione del NO2nonostante questo gas sia collegabile al fenomeno delle piogge acide.',
                     rightCaption: ''
                 },
                 vvento: {
                     left: "static/images/puglia/rel meteo gas/NO2_vvento.png",
                     right: "static/images/lombardia/rel meteo gas/NO2_vvento.png",
-                    leftCaption: '',
+                    leftCaption: 'Non esiste un\'evidente correlazione tra la velocità del vento e la concentrazione di' +
+                        ' NO2 (circa 0,002). Questo può essere dovuto alla carenza di una grossa variabilità di' +
+                        ' velocità del vento e concentrazione di NO2 misurata ma anche alla relativa pesantezza del NO2.',
                     rightCaption: ''
                 }
             },
@@ -335,7 +342,12 @@ function showPopupWithImages(gas, meteo) {
             NO2: {
                 left: "static/images/puglia/ndvi/NO2_mean.png",
                 right: "static/images/lombardia/ndvi/NO2_mean.png",
-                leftCaption: '',
+                leftCaption: 'Esiste una correlazione negativa debole (circa -0,229) tra la concentrazione di NO2' +
+                    ' e il valore NDVI misurato. Analizzata la natura del gas è probabile che la correlazione sia ' +
+                    'dovuta alla naturale capacità della vegetazione di assorbire azoto durante la fase di crescita' +
+                    ' e non agli andamenti stagionali della vegetazione. Questo perché, come mostrato dai grafi di' +
+                    ' andamento mensile dell\'NDVI, questo è più alto nei mesi autunnali e invernali rispetto a' +
+                    ' quelli primaverili e estivi.',
                 rightCaption: ''
             },
             O3: {
@@ -361,7 +373,11 @@ function showPopupWithImages(gas, meteo) {
             NO2: {
                 left: "static/images/puglia/tempo/NO2_puglia.png",
                 right: "static/images/lombardia/tempo/NO2_lombardia.png",
-                leftCaption: '',
+                leftCaption: 'Come mostrato dai grafi di andamento temporale medio del NO2, la concentrazione di' +
+                    ' NO2 cresce durante i mesi autunnali per raggiungere il suo massimo tra dicembre e febbraio ' +
+                    'e diminuire tra marzo e aprile e rimanendo relativamente basso nei periodo estivo.' +
+                    ' Questo fenomeno è legato all\'utilizzo dei riscaldamenti che rappresentano uno dei principali' +
+                    ' produttori di NO2 assieme alla combustione degli idrocarburi legata ai mezzi di trasporto.',
                 rightCaption: ''
             },
             O3: {
