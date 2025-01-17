@@ -282,40 +282,49 @@ function showPopupWithImages(gas, meteo) {
                 temperatura: {
                     left: "static/images/puglia/rel meteo gas/PM10_temperatura.png",
                     right: "static/images/lombardia/rel meteo gas/PM10_temperatura.png",
-                    leftCaption: '',
-                    rightCaption: ''
+                    leftCaption: 'Il PM10 è meno influenzabile dalla temperatura (0,086) in quanto la produzione è' +
+                        ' più legata al traffico urbano che a fenomeni legati alle temperature alte come nel caso dell\'O3.',
+                    rightCaption: 'Vi è una Bassa correlazione negativa in Lombardia(-0.326). Questo valore è' +
+                        ' probabilmente legato alla più alta attività vegetale nei periodi in cui le temperature sono ' +
+                        'più alte. Come anche dimostrato dalla relazione con NDVI locale.'
                 },
                 precipitazione: {
                     left: "static/images/puglia/rel meteo gas/PM10_precipitazione.png",
                     right: "static/images/lombardia/rel meteo gas/PM10_precipitazione.png",
-                    leftCaption: '',
-                    rightCaption: ''
+                    leftCaption: 'Esiste una lieve correlazione negativa legata alle precipitazioni (-0,13).' +
+                        ' La concentrazione di PM10 è però riducibile dalla piaggio che è in grado di abbattere queste particelle al suolo.',
+                    rightCaption: 'Anche qui vi è una lieve correlazione negativa (-0.178).'
                 },
                 vvento: {
                     left: "static/images/puglia/rel meteo gas/PM10_vvento.png",
                     right: "static/images/lombardia/rel meteo gas/PM10_vvento.png",
-                    leftCaption: '',
-                    rightCaption: ''
+                    leftCaption: 'Non esiste una sostanziale correlazione tra PM10 e velocità del vento (0,011).',
+                    rightCaption: 'Non è presente una correlazione tra PM10 e velocità del vento (0.016).'
                 }
             },
             PM25: {
                 temperatura: {
                     left: "static/images/puglia/rel meteo gas/PM2.5_temperatura.png",
                     right: "static/images/lombardia/rel meteo gas/PM25_temperatura.png",
-                    leftCaption: '',
-                    rightCaption: ''
+                    leftCaption: 'Non vi è una correlazione con il PM2,5 e la temperatura in Puglia (-0,0016).',
+                    rightCaption: 'Vi è una consistente correlazione tra temperatura e PM2,5 (-0.430).' +
+                        ' La correlazione è probabilmente dovuta alla relazione tra NDVI e temperatura.'
                 },
                 precipitazione: {
                     left: "static/images/puglia/rel meteo gas/PM2.5_precipitazione.png",
                     right: "static/images/lombardia/rel meteo gas/PM25_precipitazione.png",
-                    leftCaption: '',
-                    rightCaption: ''
+                    leftCaption: 'Esiste una lieve correlazione negativa legata alle precipitazioni (-0.14).' +
+                        ' La concentrazione di PM2,5 è però riducibile dalla piaggio che è in grado di abbattere' +
+                        ' queste particelle al suolo.',
+                    rightCaption: 'Anche qui vi è una lieve correlazione negativa (-0.152).'
                 },
                 vvento: {
                     left: "static/images/puglia/rel meteo gas/PM2.5_vvento.png",
                     right: "static/images/lombardia/rel meteo gas/PM25_vvento.png",
-                    leftCaption: '',
-                    rightCaption: ''
+                    leftCaption: 'Non sono presenti correlazioni tra PM2,5 e la velocità del vento (0.01).',
+                    rightCaption: 'È presente una lieve correlazione negativa (-0.106). Il PM2,5 è tecnicamente' +
+                        ' suscettibile alle condizioni atmosferiche come pioggia e vento ma questo livello di' +
+                        ' correlazione è comunque troppo basso per definire una correlazione effettiva.'
                 }
             }
         },
@@ -378,14 +387,19 @@ function showPopupWithImages(gas, meteo) {
             PM10: {
                 left: "static/images/puglia/ndvi/PM10_mean.png",
                 right: "static/images/lombardia/ndvi/PM10_mean.png",
-                leftCaption: '',
-                rightCaption: ''
+                leftCaption: 'La vegetazione è in grado di assorbire, a gradi variabili di efficacia, le particelle di PM10.' +
+                    ' Questo è dimostrato dal valore negativo modularmente alto del coefficiente di Person (-0,566).',
+                rightCaption: 'Anche in questo caso il valore di correlazione (-0.437) indica che la vegetazione è ' +
+                    'legata ad una minore quantità di PM10. Cosa possibilmente dovuta alla minore presenza' +
+                    ' di PM10 in aree meno densamente trafficate, che quindi possono avere più vegetazione,' +
+                    ' che alla capacità di essa di assorbire queste particelle. '
             },
             PM25: {
                 left: "static/images/puglia/ndvi/PM2.5_mean.png",
                 right: "static/images/lombardia/ndvi/PM25_mean.png",
-                leftCaption: '',
-                rightCaption: ''
+                leftCaption: 'Per quanto riguarda la Puglia non sono presenti correlazioni evidenti tra NDVI e la concentrazione del PM2,5 (0,078).',
+                rightCaption: 'La Lombardia presenta una discreta correlazione negativa tra NDVI e PM2,5 (-0.421). ' +
+                    'Questo perché la vegetazione è in grado di assorbire, con diversi livelli di efficacia, il PM2,5 proprio come il PM10.'
             }
         },
         'andamento_gas': {
@@ -415,14 +429,19 @@ function showPopupWithImages(gas, meteo) {
             PM10: {
                 left: "static/images/puglia/tempo/PM10_puglia.png",
                 right: "static/images/lombardia/tempo/PM10_lombardia.png",
-                leftCaption: '',
-                rightCaption: ''
+                leftCaption: 'Il PM10 in Puglia mostra un\'andamento temporale abbastanza irregolare mostrando dei ' +
+                    'minimi locali tra marzo e maggio e settembre e novembre e dei picchi di massimo locali tra giugno, febbraio e dicembre.',
+                rightCaption: 'Per quanto riguarda l\'andamento temporale del PM10 in Lombardia, qui l\'andamento è più ' +
+                    'regolare, avendo dei valori più alti tra ottobre e marzo. Che è anche il periodo di tempo in cui il NDVI lombardo è più basso.'
             },
             PM25: {
                 left: "static/images/puglia/tempo/PM25_puglia.png",
                 right: "static/images/lombardia/tempo/PM25_lombardia.png",
-                leftCaption: '',
-                rightCaption: ''
+                leftCaption: 'Il PM2,5 in Puglia mostra un\'andamento temporale abbastanza irregolare mostrando dei ' +
+                    'minimi locali tra aprile e maggio e settembre e novembre e dei picchi di massimo locali tra luglio,' +
+                    ' febbraio e dicembre.',
+                rightCaption: 'Per quanto riguarda l\'andamento temporale del PM2,5 in Lombardia, qui l\'andamento è più' +
+                    ' regolare, avendo dei valori più alti tra ottobre e marzo. Che è anche il periodo di tempo in cui il NDVI lombardo è più basso.'
             }
         }
     };
