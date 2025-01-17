@@ -352,7 +352,7 @@ function showPopupWithImages(gas, meteo) {
             },
             PM25: {
                 left: "static/images/puglia/ndvi/PM2.5_mean.png",
-                right: "static/images/lombardia/ndvi/PM2.5_mean.png",
+                right: "static/images/lombardia/ndvi/PM25_mean.png",
                 leftCaption: '',
                 rightCaption: ''
             }
@@ -377,8 +377,8 @@ function showPopupWithImages(gas, meteo) {
                 rightCaption: ''
             },
             PM25: {
-                left: "static/images/puglia/tempo/PM2.5_puglia.png",
-                right: "static/images/lombardia/tempo/PM2.5_lombardia.png",
+                left: "static/images/puglia/tempo/PM25_puglia.png",
+                right: "static/images/lombardia/tempo/PM25_lombardia.png",
                 leftCaption: '',
                 rightCaption: ''
             }
